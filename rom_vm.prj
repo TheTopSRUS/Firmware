@@ -1,0 +1,43 @@
+; ************************************************************
+; PROJECT:
+; AUTHOR:
+; ************************************************************
+
+; Micro + software running
+; ------------------------------------------------------------
+.MICRO "ATmega8"
+.TOOLCHAIN "GENERIC"
+.TARGET    "rom_cv.hex"
+.COFF      "rom_cv.cof"
+.SOURCE    "rom_cv__.c"; "rom_cv.cof" "rom_cv.hex"
+
+
+; Following lines are optional; if not included
+; exactly these values are taken by default
+; ------------------------------------------------------------
+.POWER VDD=5 VSS=0  ; Power nodes
+.CLOCK 5.12meg         ; Micro clock
+.STORE 2000m         ; Trace (micro+signals) storage time
+
+; Micro nodes: RESET, AREF, PB0-PB7, PC0-PC6, PD0-PD7, ACO, TIM1OVF, ADC6, ADC7
+; Define here the hardware around the micro
+; ------------------------------------------------------------
+
+
+
+R1 AREF Vdd 100
+
+
+ D2 Vdd PD2  ; Rele 2
+ D3 Vdd PD3  ; Rele 3
+ D4 Vdd PD4  ; Rele 1
+
+
+X1 TTY(9600 8) PD0 PD1     ; USB-COM
+
+
+
+
+.plot V(PB1) V(PB2) V(PC0) V(PD2) V(PD3) V(PD4)
+
+

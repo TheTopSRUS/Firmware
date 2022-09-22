@@ -1,0 +1,27 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+rx_buffer                                                         0160h      100
+adc_data                                                          01C4h        2
+input_index                                                       01C6h        1
+PWM2_Value                                                        01C7h        2
+Tmp1_Value                                                        01C9h        1
+Tmp2_Value                                                        01CAh        1
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------
+rx_wr_index                                                       R5           1
+rx_rd_index                                                       R4           1
+rx_counter                                                        R7           1
+rx_buffer_overflow                                                R2.0      1bit
+On                                                                R6           1
+Off                                                               R9           1
+Fan1_Status                                                       R8           1
+Fan2_Status                                                       R11          1
+Fan3_Status                                                       R10          1
+PWM1_Value                                                        R12,R13      2
